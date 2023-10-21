@@ -3,12 +3,12 @@ resource "aws_s3_bucket" "datadog_aws_bucket" {
   bucket = "${var.name}"
 }
 
-resource "aws_s3_bucket_acl" "FailedDataBucket_ACL" {
+resource "aws_s3_bucket_acl" "failed_data_bucket_acl" {
   bucket = aws_s3_bucket.datadog_aws_bucket.id
   acl    = "private"
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "FailedDataBucket_encryption" {
+resource "aws_s3_bucket_server_side_encryption_configuration" "failed_data_bucket_encryption" {
   bucket = aws_s3_bucket.datadog_aws_bucket.bucket
 
   rule {
@@ -18,7 +18,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "FailedDataBucket_
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "FailedDataBucket_public_access_block" {
+resource "aws_s3_bucket_public_access_block" "failed_data_bucket_public_access_block" {
   bucket = aws_s3_bucket.datadog_aws_bucket.id
 
   block_public_acls       = true
@@ -51,7 +51,7 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
 POLICY
 }
 
-resource "aws_s3_bucket_lifecycle_configuration" "FailedDataBucket-config" {
+resource "aws_s3_bucket_lifecycle_configuration" "failed_data_bucket_config" {
   bucket = aws_s3_bucket.datadog_aws_bucket.bucket
 
   rule {
