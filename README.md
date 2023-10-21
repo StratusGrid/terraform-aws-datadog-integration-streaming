@@ -1,15 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
-# template-terraform-module-starter
+# terraform-aws-datadog-integration-streaming
 
-GitHub: [StratusGrid/template-terraform-module-starter](https://github.com/StratusGrid/template-terraform-module-starter)
-
-This Repo is meant to act as a template which can be used
-when creating new modules.
-
-<span style="color:red">**Notes:</span>
-- Don't forget to change the module source repo tag in `tags.tf`!
-- Please remove all of the unnecessary initial documentation from the `.terraform-docs.yml` file as they exist purely to make the module and not for continual publishing.
-- Update the examples and include the Terraform registry information and proper version constraint. A version constraint would generally look like this `~> 1.0`
+GitHub: [StratusGrid/terraform-aws-datadog-integration-streaming](https://github.com/StratusGrid/terraform-aws-datadog-integration-streaming)
 
 ## Example
 
@@ -62,11 +54,6 @@ pre-commit run --all-files
 # Add your pre-commit hooks forever
 pre-commit install
 ```
-
-### Template Documentation
-
-A sample template Git Repo with how we should setup client infrastructure, in this case it's shared infrastructure.
-More details are available [here](https://stratusgrid.atlassian.net/wiki/spaces/MS/pages/2065694728/MSP+Client+Setup+-+Procedure) in confluence.
 
 ## Documentation
 
