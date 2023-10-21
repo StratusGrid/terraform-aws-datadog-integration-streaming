@@ -1,5 +1,5 @@
 variable "name" {
-  description = "name to prepend to all resource names within module. NOTE: For this DataDog integration, it is recommended to use a format that includes the AWS Account number and region since it is account and region specific."
+  description = "name to prepend to all resource names within module. NOTE: For this DataDog integration, it is recommended to use a format that includes the AWS Account number since it is account specific."
   type        = string
 }
 
@@ -12,30 +12,6 @@ variable "input_tags" {
   }
 }
 
-#DataDog Variables
-variable "datadog_api_key" {
-  type        = string
-  description = "Datadog API Key"
-  sensitive   = true
-}
-
-variable "datadog_app_key" {
-  type        = string
-  description = "Datadog Application Key"
-  sensitive   = true
-}
-
-variable "datadog_api_url" {
-  type        = string
-  description = "Datadog API URL"
-}
-
-variable "datadog_firehose_delivery_stream_url" {
-  type        = string
-  description = "Datadog URL for the Firehose Delivery stream to send metrics. Marked sensitive because the some endpoints requires a key in the url."
-  sensitive   = true
-}
-
 variable "datadog_host_tags" {
   type        = list(string)
   description = "List of strings to set as default key value pair tags on all data ingested from this integration. For example, [\"environment:$${var.aws_account_name}\"]"
@@ -44,7 +20,7 @@ variable "datadog_host_tags" {
 
 variable "datadog_account_specific_namespace_rules" {
   type        = map(string)
-  description = "Map defining the enabled DataDog AWS service integrations"
+  description = "Map defining the enabled DataDog AWS service integrations, defaults to disabling many for firehose metric streaming."
   default = {
     "api_gateway"                    = false
     "application_elb"                = false
