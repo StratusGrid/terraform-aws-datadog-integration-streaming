@@ -39,6 +39,7 @@ variable "datadog_firehose_delivery_stream_url" {
 variable "datadog_host_tags" {
   type        = list(string)
   description = "List of strings to set as default key value pair tags on all data ingested from this integration. For example, [\"environment:$${var.aws_account_name}\"]"
+  default     = null
 }
 
 variable "datadog_account_specific_namespace_rules" {
