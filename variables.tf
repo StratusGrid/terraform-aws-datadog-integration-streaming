@@ -12,6 +12,24 @@ variable "input_tags" {
   }
 }
 
+#DataDog Variables
+variable "datadog_api_key" {
+  type        = string
+  description = "Datadog API Key"
+  sensitive   = true
+}
+
+variable "datadog_app_key" {
+  type        = string
+  description = "Datadog Application Key"
+  sensitive   = true
+}
+
+variable "datadog_api_url" {
+  type        = string
+  description = "Datadog API URL"
+}
+
 variable "datadog_host_tags" {
   type        = list(string)
   description = "List of strings to set as default key value pair tags on all data ingested from this integration. For example, [\"environment:$${var.aws_account_name}\"]"
