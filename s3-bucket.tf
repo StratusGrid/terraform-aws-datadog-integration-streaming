@@ -1,6 +1,6 @@
 #Firehose stores data that failed to upload to DataDog in this s3 bucket.
 resource "aws_s3_bucket" "datadog_aws_bucket" {
-  bucket = "${var.name}"
+  bucket = var.name
 }
 
 resource "aws_s3_bucket_acl" "failed_data_bucket_acl" {

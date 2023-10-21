@@ -42,7 +42,7 @@ variable "datadog_host_tags" {
 }
 
 variable "datadog_account_specific_namespace_rules" {
-  type = map(string)
+  type        = map(string)
   description = "Map defining the enabled DataDog AWS service integrations"
   default = {
     "api_gateway"                    = false
