@@ -152,7 +152,7 @@ data "aws_secretsmanager_secret_version" "datadog_secret" {
 module "datadog_integration" {
   # source                               = "github.com/StratusGrid/terraform-aws-datadog-integration-streaming"
   source            = "StratusGrid/datadog-integration-streaming/aws"
-  version           = "1.0.0"
+  version           = "1.0.1"
   name              = "${var.name_prefix}-integration-${data.aws_caller_identity.current.account_id}${local.name_suffix}"
   input_tags        = local.common_tags
   datadog_api_key   = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -168,7 +168,7 @@ module "datadog_integration" {
 module "datadog_integration_us_east_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-us-east-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -181,7 +181,7 @@ module "datadog_integration_us_east_1" {
 module "datadog_integration_us_west_2" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-us-west-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -194,7 +194,7 @@ module "datadog_integration_us_west_2" {
 module "datadog_integration_ca_central_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ca-central-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -207,7 +207,7 @@ module "datadog_integration_ca_central_1" {
 module "datadog_integration_sa-east-1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-sa-east-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -220,7 +220,7 @@ module "datadog_integration_sa-east-1" {
 module "datadog_integration_eu_west_2" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-eu-west-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -233,7 +233,7 @@ module "datadog_integration_eu_west_2" {
 module "datadog_integration_eu_central_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-eu-central-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -246,7 +246,7 @@ module "datadog_integration_eu_central_1" {
 module "datadog_integration_ap_southeast_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-southeast-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -259,7 +259,7 @@ module "datadog_integration_ap_southeast_1" {
 module "datadog_integration_ap_southeast_2" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-southeast-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -272,7 +272,7 @@ module "datadog_integration_ap_southeast_2" {
 module "datadog_integration_ap_northeast_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-northeast-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -285,7 +285,7 @@ module "datadog_integration_ap_northeast_1" {
 module "datadog_integration_ap_northeast_2" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-northeast-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
