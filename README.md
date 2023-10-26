@@ -3,9 +3,13 @@
 
 GitHub: [StratusGrid/terraform-aws-datadog-integration-streaming](https://github.com/StratusGrid/terraform-aws-datadog-integration-streaming)
 
+This module creates a DataDog integration meant to be used with CloudWatch metrics streams. For this reason, it disables DataDog service integrations which would be duplicated by a CloudWatch stream by default. The typical approach is to create one integration per account and one metrics stream per region (see example below).
+
+This is meant to be used with our module which creates the CloudWatch metrics stream and Firehose, which can be found here: [firehose-datadog-metrics-streaming](https://registry.terraform.io/modules/StratusGrid/firehose-datadog-metrics-streaming/aws/latest)
+
 ## Example
 
-Multi-region Example utilizing both the integration module to make the account level integration in DataDog and the metrics streaming module to create the firehose and metrics stream in each region.
+Multi-region Example utilizing both the integration module to make the account level integration in DataDog and the metrics streaming module to create the Firehose and metrics stream in each region.
 ```hcl
 # Standard Variables and Locals
 variable "env_name" {
