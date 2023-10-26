@@ -11,8 +11,9 @@ content: |-
 
   ## Example
 
+  Multi-region Example utilizing both the integration module to make the account level integration in DataDog and the metrics streaming module to create the firehose and metrics stream in each region.
   ```hcl
-  {{ include "examples/example1.tfnot" }}
+  {{ include "examples/example-multi-region.tfnot" }}
   ```
   ---
 
