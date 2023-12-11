@@ -20,7 +20,7 @@ resource "aws_iam_policy" "datadog_aws_integration" {
 
 data "aws_iam_policy_document" "datadog_aws_integration" {
   statement {
-    actions = [
+    actions = [ #tfsec:ignore:aws-iam-no-policy-wildcards
       "apigateway:GET",
       "autoscaling:Describe*",
       "backup:List*",
@@ -97,7 +97,7 @@ data "aws_iam_policy_document" "datadog_aws_integration" {
       "xray:GetTraceSummaries"
     ]
 
-    resources = ["*"]
+    resources = ["*"] #tfsec:ignore:aws-iam-no-policy-wildcards
   }
 }
 
